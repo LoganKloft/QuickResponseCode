@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=c, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Quick Response Code</title>
+</head>
+<body>
+    <header>
+        <h1>Quick Response Codes</h1>
+        <div class="qrcode"></div>
+        <h2>By: Logan Kloft</h2>
+    </header>
+
+    <div class="history">
+        <h1>Origination</h1>
+        <ul>
+            <li>Developed by Denso Wave, a subsidiary of Toyota</li>
+            <li>Replace barcodes which can hold 20 alphanumeric characters</li>
+            <li>Purpose was to track inventory in vehicle parts manufacturing</li>
+        </ul>
+    </div>
+
+    <div class="what-is">
+        <h1>What is a QR code made of?</h1>
+    </div>
+
+    <div class="container-fixed">
+        <div class="fixed-patterns">
+            <h1>Fixed Patterns</h1>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1 class="finder-pattern-title">Finder Pattern</h1>
+                <div class="finder-info">
+                    <div>
+                        <div class="qrcode-finder"></div>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            Signifies where to start decoding the message regardless of the rotation of the QR code. Note that there is a final half-ring of blank modules surrounding each finder pattern on the inside of the QR code. These modules are sometimes referred to as separators.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1>Timing Pattern</h1>
+                <div class="timing-info">
+                    <div>
+                        <div class="qrcode-timing"></div>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            Determine size of modules and number of rows and columns.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1>Alignment Pattern</h1>
+                <div class="alignment-info">
+                    <div class="qrcode-alignment"></div>
+                    <div class="description">
+                        <h2>
+                            Allow scanning device to more easily deal with perspective distortion. Use <a href="https://www.thonky.com/qr-code-tutorial/alignment-pattern-locations" target="_blank">this</a> table to place alignment patterns. Only place patterns that do not overlap with fixed patterns.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1>Dark Module</h1>
+                <div class="dark-module-info">
+                    <div class="qrcode-dark-module"></div>
+                    <div class="description">
+                        <h2>
+                            Mysterious name for an even more mysterious meaning...
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1>Format Information</h1>
+                <div class="format-info">
+                    <div class="qrcode-format"></div>
+                    <div class="description">
+                        <h2>Store mask and error correction <a href="https://www.thonky.com/qr-code-tutorial/format-version-tables" target="_blank">format</a> information. Versions 7+ introduce extra format modules for each version in duplicate <a href="https://www.thonky.com/qr-code-tutorial/module-placement-matrix#:~:text=QR%20codes%20versions%207%20and%20larger%20must%20contain%20two%20areas%20where%20version%20information%20bits%20are%20placed.%20The%20areas%20are%20a%206x3%20block%20above%20the%20bottom%2Dleft%20finder%20pattern%20and%20a%203x6%20block%20to%20the%20left%20of%20the%20top%2Dright%20finder%20pattern.%20The%20following%20images%20show%20the%20locations%20of%20the%20reserved%20areas%20in%20blue." target="_blank">6x3</a> module blocks.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="fixed-patterns-spacer"></div>
+            <div class="center">
+                <h1>Quiet Zone</h1>
+                <div class="quietzone-info">
+                    <div class="qrcode-quiet-zone"></div>
+                    <div class="description">
+                        <h2>Increase ability to detect QR code</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="codewords-container">
+        <div class="codewords">
+            <h1>Codewords</h1>
+        </div>
+        <div class="codeword-info-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Error Correction Level</th>
+                        <th>Numeric Mode</th>
+                        <th>Alphanumeric Mode</th>
+                        <th>Byte Mode</th>
+                        <th>Kanji Mode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">1</td>
+                        <td>L</td>
+                        <td>41</td>
+                        <td>25</td>
+                        <td>17</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>34</td>
+                        <td>20</td>
+                        <td>14</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Q</td>
+                        <td>27</td>
+                        <td>16</td>
+                        <td>11</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td>17</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">2</td>
+                        <td>L</td>
+                        <td>77</td>
+                        <td>47</td>
+                        <td>32</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>63</td>
+                        <td>38</td>
+                        <td>26</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Q</td>
+                        <td>48</td>
+                        <td>29</td>
+                        <td>20</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td>34</td>
+                        <td>20</td>
+                        <td>14</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>message: https://www.qrcode.com/</h1>
+            <div>
+                <h1>length: 23</h1>
+                <h1>mode: byte</h1>
+            </div>
+            <div>
+                <h1>lowest version that supports given length: 2</h1>
+                <h1>highest level of error correction: Medium</h1>
+            </div>
+        </div>
+        <div class="tables-container">
+            <div class="tables">
+                <table>
+                    <caption>Mode Bits</caption>
+                    <thead>
+                    <tr>
+                    <th>Encoding Mode</th>
+                    <th>Value bits</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>Numeric</td>
+                    <td>0001 (1)</td>
+                    </tr>
+                    <tr>
+                    <td>Alphanumeric</td>
+                    <td>0010 (2)</td>
+                    </tr>
+                    <tr>
+                    <td>Byte</td>
+                    <td>0100 (4)</td>
+                    </tr>
+                    <tr>
+                    <td>Kanji</td>
+                    <td>1000 (8)</td>
+                    </tr>
+                    <tr>
+                    <td>ECI</td>
+                    <td>0111 (7)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <caption>Length Bits</caption>
+                    <thead>
+                    <tr>
+                    <th>Encoding Mode</th>
+                    <th>Version 1-9</th>
+                    <th>Version 10-26</th>
+                    <th>Version 27-40</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>Numeric</td>
+                    <td>10</td>
+                    <td>12</td>
+                    <td>14</td>
+                    </tr>
+                    <tr>
+                    <td>Alphanumeric</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>13</td>
+                    </tr>
+                    <tr>
+                    <td>Byte</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>16</td>
+                    </tr>
+                    <tr>
+                    <td>Kanji</td>
+                    <td>8</td>
+                    <td>10</td>
+                    <td>12</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h1>Data Codewords</h1>
+                <div class="binary">
+                    <h1 class="mode-bits">0100</h1>
+                    <h1 class="length-bits">00010111</h1>
+                    <h1 class="message-bits"></h1>
+                    <h1 class="termination-bits">0000</h1> <!-- termination,alternatively start next block -->
+                    <h1 class="alternating-bits">11101100</h1> <!-- 236 -->
+                    <h1 class="alternating-bits">00010001</h1> <!-- 17 -->
+                    <h1 class="alternating-bits">11101100</h1> <!-- 236 -->
+                </div>
+                <h1>Error Correction Codewords</h1>
+                <h1 class="edc-bits"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="construction-container">
+        <div class="construction">
+            <h1>Construction</h1>
+        </div>
+
+        <!-- placement -->
+        <div class="construction-panel">
+            <h1 class="construction-title">Place bits</h1>
+            <div class="placement-info">
+                <div class="qrcode-placement"></div>
+                <div class="qrcode-maskless"></div>
+            </div>
+            <h1 class="placement-label">Follow the numbers starting at the bottom right corner and use the previous bit strings starting with the data codewords then move onto the error correction codewords. A 1 is a dark module and 0 a light module.</h1>
+        </div>
+
+        <!-- masks -->
+        <div class="construction-panel">
+            <h1 class="construction-title">Select and apply mask</h1>
+            <div class="mask-info">
+                <div class="qrcode-maskless-copy"></div>
+                <h1>+</h1>
+                <img src="../images/mask_patterns.png" alt="">
+                <h1>=></h1>
+                <div class="qrcode-pattern1"></div>
+            </div>
+            <h1 class="mask-label">Select a mask. Now we have the information to fill in the mask version and error correction level. These <a href="https://www.thonky.com/qr-code-tutorial/format-version-tables" target="_blank">values</a> are duplicated and also use a high level of error correction. To apply the mask, xor the codeword modules of th QR code with the truth value of the expression of the selected mask where i is the row and j the column.</h1>
+        </div>
+
+        <!-- select best mask -->
+        <div class="construction-panel optimize-container">
+            <h1>Optimize mask selection:</h1>
+            <h2>For each mask add the points of each rule below together</h2>
+            <ul>
+                <li>Check all rows and columns for consecutive sequences of light or dark modules that are at least length 5, add points equal to the length of the sequence minus 2.</li>
+                <li>Add 3 points for every 2x2 square of light or dark modules, including overlapping squares</li>
+                <li>The following sequence or its reverse found in a row or column, add 40 points: 
+                    <div class="sequence">
+                        <div class="qrcode-cell qrcode-cell-black"></div>
+                        <div class="qrcode-cell"></div>
+                        <div class="qrcode-cell qrcode-cell-black"></div>
+                        <div class="qrcode-cell qrcode-cell-black"></div>
+                        <div class="qrcode-cell qrcode-cell-black"></div>
+                        <div class="qrcode-cell"></div>
+                        <div class="qrcode-cell qrcode-cell-black"></div>
+                        <div class="qrcode-cell"></div>
+                        <div class="qrcode-cell"></div>
+                        <div class="qrcode-cell"></div>
+                        <div class="qrcode-cell"></div>
+                    </div>
+                </li>
+                <li>Calculate the percentage of dark modules and round it up to the nearest multiple of 5 if below 50%, or down to the nearest multiple of 5 if above 50%. Then subtract 50, multiply by 2, and add the absolute value as points.</li>
+            </ul>
+            <h1>Select mask with lowest total points.</h1>
+            <h2>The purpose of mask optomization is to make scanning the QR code quicker.</h2>
+        </div>
+
+        <!-- example -->
+        <div class="construction-panel">
+            <h1 class="construction-title">Example: Mask 0</h1>
+            <div class="qrcode-rules">
+                <div>
+                    <h1>Rule 1</h1>
+                    <div class="qrcode-rule1"></div>
+                    <h1 class="rule1-score"></h1>
+                </div>
+                <div>
+                    <h1>Rule 2</h1>
+                    <div class="qrcode-rule2"></div>
+                    <h1 class="rule2-score"></h1>
+                </div>
+                <div>
+                    <h1>Rule 3</h1>
+                    <div class="qrcode-rule3"></div>
+                    <h1 class="rule3-score"></h1>
+                </div>
+            </div>
+            <h1 class="total"></h1>
+        </div>
+
+        <div class="construction-panel">
+            <h1>Mask Scores</h1>
+            <div class="total-container">
+                <div>
+                    <h1>Mask 0</h1>
+                    <div class="rule0"></div>
+                    <h1 class="total0"></h1>
+                </div>
+                <div>
+                    <h1>Mask 1</h1>
+                    <div class="rule1"></div>
+                    <h1 class="total1"></h1>
+                </div>
+                <div class="mask2-selected">
+                    <h1>Mask 2</h1>
+                    <div class="rule2"></div>
+                    <h1 class="total2"></h1>
+                </div>
+                <div>
+                    <h1>Mask 3</h1>
+                    <div class="rule3"></div>
+                    <h1 class="total3"></h1>
+                </div>
+                <div>
+                    <h1>Mask 4</h1>
+                    <div class="rule4"></div>
+                    <h1 class="total4"></h1>
+                </div>
+                <div>
+                    <h1>Mask 5</h1>
+                    <div class="rule5"></div>
+                    <h1 class="total5"></h1>
+                </div>
+                <div>
+                    <h1>Mask 6</h1>
+                    <div class="rule6"></div>
+                    <h1 class="total6"></h1>
+                </div>
+                <div>
+                    <h1>Mask 7</h1>
+                    <div class="rule7"></div>
+                    <h1 class="total7"></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="construction-panel">
+            <h1>Final QR Code</h1>
+            <div class="qrcode-final"></div>
+            <h1>message: https://www.qrcode.com/</h1>
+        </div>
+    </div>
+
+    <div class="outcome-container">
+        <!-- Attacks -->
+        <div class="attacks">
+            <h1>Attacks on a QR Code</h1>
+            <ul>
+                <li>What
+                    <ul>
+                        <li>Change the original message.</li>
+                        <li>Decrease length of message read by reader.</li>
+                        <li>Increase length of message read by reader.</li>
+                        <li>Insert new messages before, between, or after existing messages assuming room exists. Delete entire messages.</li>
+                    </ul>
+                </li>
+                <li>How
+                    <ul>
+                        <li>Generate a QR code and paste it over target QR code</li>
+                        <li>Manipulate individual modules such as turning a white module black. Note: turning a black module white might be more noticable than the other way around.</li>
+                        <li>Update error correction codewords if not creating new QR code.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Threats -->
+        <div class="threats">
+            <h1>Threats of a QR Code</h1>
+            <ul>
+                <li>To people
+                    <ul>
+                        <li>Redirect to a malicious website</li>
+                        <li>Add a spoofed contact</li>
+                        <li>Link to a malicious app</li>
+                        <li>Join malicious WiFi</li>
+                    </ul>
+                </li>
+                <li>To machines
+                    <ul>
+                        <li>SQL injection if machine executes message as sql statement</li>
+                        <li>Command line injection if machine executes message on the command line</li>
+                        <li>Even if the message is sanitized, if the machine uses it for price information, one can change the price of the product.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Defenses -->
+        <div class="defenses">
+            <h1>Defenses Against QR Codes</h1>
+            <ul>
+                <li> Implement scanner such that it warns a user that it has detected interference in the case that it uses the QR code's error correcting capabilities.</li>
+                <li> Implement scanner such that it rejects a QR code if it detects more changes than it is able to correct.</li>
+                <li>Sanitize input for automated systems. Configure database to secure standards. Assign appropriate roles to software scanning and executing QR codes.</li>
+                <li>Manually check QR codes to ensure they have been modified.</li>
+                <li>Don't accept the content that a QR code shows without verifying that it is what you expect. Verify URL if the content is a URL, verify contact information if content is contact information, etc.</li>
+            </ul>
+        </div>
+        <!-- Summary -->
+        <div class="summary">
+            <h1>Conclusion</h1>
+            <p>We have walked through the creation of a basic version 2 QR code. It is not difficult to create a QR Code other than the error correction part, however one does not need to worry about that since there are resources online that make this part painless. Creating a version 2 QR code is the same for versions 1-6 where the only difference is in the <a href="https://www.thonky.com/qr-code-tutorial/alignment-pattern-locations" target="_blank">placement</a> of alignment patterns and the length of data and error correction codewords. Versions 7 and onwards are slightly different in that they encode extra <a href="https://www.thonky.com/qr-code-tutorial/format-version-tables" target="_blank">version format</a> information in duplicate <a href="https://www.thonky.com/qr-code-tutorial/module-placement-matrix#:~:text=QR%20codes%20versions%207%20and%20larger%20must%20contain%20two%20areas%20where%20version%20information%20bits%20are%20placed.%20The%20areas%20are%20a%206x3%20block%20above%20the%20bottom%2Dleft%20finder%20pattern%20and%20a%203x6%20block%20to%20the%20left%20of%20the%20top%2Dright%20finder%20pattern.%20The%20following%20images%20show%20the%20locations%20of%20the%20reserved%20areas%20in%20blue." target="_blank">6x3</a> modules.</p>
+            <p>A QR Code is only as dangerous as the content that hides in side of it and and can only be as deadly as we allow it to be. Proper cyber hygiene and awareness of the threats of a QR Code make them convenient tools for sharing information. Aditionally, A QR Code's abilities are limited by that of its reader's own capabilities. A reader unable to recognize urls as different from text does not have the same vulnerabilities as a reader that can detect urls and redirect to them.</p>
+            <p>Another thought worth considering are QRCodes that contain tinyURLs which redirect to other services that do the real heavy lifting. These are called dynamic QR codes since the content they link to can change. This is useful when one wants to reuse the same QR Code or manage just a single QR Code. The concern for using tinyURLs are the fact that they mask a url and it would be inconvenient to decode the url.</p>
+        </div>
+        <div class="references">
+            <h1>References</h1>
+            <ol>
+                <li>Artizzu, M. (2021, September 1). Let's develop a QR code generator, part I: Basic concepts. DEV Community. Retrieved March 19, 2023, from https://dev.to/maxart2501/let-s-develop-a-qr-code-generator-part-i-basic-concepts-510a</li>
+                <li>S. Tiwari, "An Introduction to QR Code Technology," 2016 International Conference on Information Technology (ICIT), Bhubaneswar, India, 2016, pp. 39-44, doi: 10.1109/ICIT.2016.021.</li>
+                <li>Karrach, Ladislav et al. “Identification of QR Code Perspective Distortion Based on Edge Directions and Edge Projections Analysis.” Journal of imaging vol. 6,7 67. 10 Jul. 2020, doi:10.3390/jimaging6070067</li>
+                <li>Thonky. (2022, August 7). QR Code Tutorial. QR code tutorial - thonky.com. Retrieved March 19, 2023, from https://www.thonky.com/qr-code-tutorial/ </li>
+                <li>Ruoti, S. (2022, November 4). How QR codes work and what makes them dangerous – a computer scientist explains. The Conversation. Retrieved March 19, 2023, from https://theconversation.com/how-qr-codes-work-and-what-makes-them-dangerous-a-computer-scientist-explains-177217#:~:text=When%20you%20scan%20a%20QR,browser%20will%20open%20the%20webpage. </li>
+                <li>Kieseberg, P., Leithner, M., Mulazzani, M., Munroe, L., Schrittwieser, S., Sinha, M., &amp; Weippl, E. (2010). QR code security. Proceedings of the 8th International Conference on Advances in Mobile Computing and Multimedia. https://doi.org/10.1145/1971519.1971593 </li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="../javascript/qr.js" type="module"></script>
+    <script src="../javascript/index.js" type="module"></script>
+</body>
+</html>

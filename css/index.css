@@ -1,0 +1,406 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+:root {
+    --cell-width: 16px;
+    --cell-height: 16px;
+    --panel-count: 6;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* .qrcode {
+
+} */
+
+.qrcode-row {
+    display: flex;
+    justify-content: center;
+    height: var(--cell-height);
+}
+
+.qrcode-cell {
+    display: inline-block;
+    position: relative;
+    width: var(--cell-width);
+    height: var(--cell-height);
+    /* border: 1px solid black; */
+    background-color: white;
+    text-align: center;
+}
+
+.qrcode-cell:hover::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    opacity: 60%;
+}
+
+.qrcode-cell-black {
+    background-color: black;
+}
+
+.history {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history ul {
+    width: 60%;
+}
+
+.history ul li {
+    font-size: 2em;
+}
+
+.container-fixed {
+    height: 100%;
+    width: calc(100% * var(--panel-count));
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.fixed-patterns {
+    background-color: orange;
+    position:absolute;
+    width: calc(100% / var(--panel-count));
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-patterns-spacer {
+    height: 10%;
+    width: calc(100% / var(--panel-count));
+}
+
+.blue {
+  background-color: #2c7ad2;
+}
+
+
+.red {
+  background-color: #c82736;
+}
+
+.panel {
+    width: calc(100% / var(--panel-count));;
+    height: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* font-weight: 600; */
+    /* font-size: 1.5em; */
+    /* text-align: center; */
+    /* color: white; */
+    position: relative;
+    box-sizing: border-box;
+    /* padding: 10px; */
+}
+
+.description {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    display:flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.finder-info, .timing-info, .alignment-info, .dark-module-info, .format-info, .quietzone-info {
+    display: flex;
+    width: 100%;
+}
+
+.finder-info > div, .timing-info > div, .alignment-info > div, .dark-module-info > div, .format-info > div, .quietzone-info > div {
+    width: 50%;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+}
+
+.format-quiet-titles {
+    display: flex;
+}
+
+.format-quiet-titles > div {
+    width: 50%;
+}
+
+.format-quiet-codes {
+    display: flex;
+    align-items: center;
+}
+
+.format-quiet-codes > div {
+    width: 50%;
+}
+
+.highlight-module::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+}
+
+.format-quiet-description {
+    display: flex;
+}
+
+.format-quiet-description h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.format-quiet-description > div {
+    width: 50%;
+}
+
+.codewords {
+    background-color: orange;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.binary {
+    display: flex;
+    background-color: grey;
+    border-radius: 30px;
+    margin: 5px;
+    justify-content: center;
+}
+
+.message-bits {
+    width: 40%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.mode-bits {
+    color: magenta;
+}
+
+.length-bits {
+    color: blue;
+}
+
+.termination-bits {
+    color: green;
+}
+
+.alternating-bits {
+    color: orange;
+}
+
+.edc-bits {
+    overflow-x: scroll;
+    background-color: grey;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.codeword-info-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.codeword-info-container h1 {
+    text-align: start;
+    background-color: grey;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.codeword-info-container > div {
+    display: flex;
+}
+
+.codeword-info-container > div > h1 {
+    width: 50%;
+}
+
+table {
+    color: white;
+    background-color: #333;
+    border-collapse: collapse;
+    flex: 1;
+}
+
+thead th {
+    background: rgba(0255, 255, 255, .15);
+}
+
+th, td {
+    padding: .5em;
+    border: 1px solid grey;
+}
+
+.tables {
+    display: flex;
+    height: 50%;
+}
+
+.tables-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.construction {
+    position: absolute;
+    background-color: orange;
+    width: calc(100% / 7);
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.construction-container {
+    height: 100%;
+    width: 700%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.construction-panel {
+    width: calc(100% / 7);
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.construction-title {
+    margin-top: 10vh;
+}
+
+.qrcode-rules {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+.placement-info {
+    width: 100%;
+    display: flex;
+}
+
+.placement-info > div {
+    width: 50%;
+}
+
+.placement-label {
+    margin-top: 5%;
+    margin-bottom: 0px;
+    width: 90%;
+}
+
+.mask-info {
+    display: flex;
+    align-items: center;
+}
+
+.mask-label {
+    margin-top: 5%;
+    margin-bottom: 0px;
+    width: 90%;
+}
+
+.optimize-container h1, .optimize-container h2 {
+    margin: 0px;
+}
+
+.sequence > div {
+    border: 1px solid black;
+}
+
+.construction-panel > ul {
+    width: 60%;
+}
+
+.construction-panel > ul li {
+    font-size: 2em;
+}
+
+.qrcode-rules h1 {
+    margin: 0px;
+}
+
+.total-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+}
+
+.total-container > div > div {
+    border: 1px solid black;
+}
+
+.mask2-selected {
+    background-color: rgba(255, 0, 0, .4);
+    border-radius: 30px;
+}
+
+.qrcode-final {
+    margin: 20px 0px;
+}
+
+.outcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attacks, .threats, .defenses, .summary, .references {
+    font-size: 2em;
+    width: 80%;
+}
